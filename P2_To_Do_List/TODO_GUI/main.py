@@ -129,17 +129,8 @@ class ToDoApp:
         Create_task_btn = Button(self.root, text='Create task', font=('verdana',15), width=15,bg='#EB2B81', command=self.create_task)
         Create_task_btn.pack(pady=(10,10))
 
-        # Edit_task_btn = Button(self.root, text='Edit task', font=('verdana',15), width=15,bg='#EB2B81', command=self.register_gui)
-        # Edit_task_btn.pack(pady=(10,10))
-
-        # Delete_task_btn = Button(self.root, text='Delete task', font=('verdana',15), width=15,bg='#EB2B81', command=self.register_gui)
-        # Delete_task_btn.pack(pady=(10,10))
-
         View_task_btn = Button(self.root, text='View task', font=('verdana',15), width=15,bg='#EB2B81', command=self.view_task)
         View_task_btn.pack(pady=(10,10))
-
-        # Marktask_done_btn = Button(self.root, text='Marktask done', font=('verdana',15), width=15,bg='#EB2B81', command=self.register_gui)
-        # Marktask_done_btn.pack(pady=(10,10))
 
         Logout_btn = Button(self.root, text='Logout', font=('verdana',15), width=15,bg='#EB2B81', command=self.login_gui)
         Logout_btn.pack(pady=(10,10))
@@ -206,6 +197,16 @@ class ToDoApp:
 
         back_btn = Button(self.root, text='Go Back', font=('verdana',15), width=15,bg='#EB2B81', command=self.task_btn)
         back_btn.pack(pady=(10,10))
+
+        Edit_task_btn = Button(self.root, text='Edit task', font=('verdana',15), width=15,bg='#EB2B81')
+        Edit_task_btn.pack(pady=(10,10))
+
+        Delete_task_btn = Button(self.root, text='Delete task', font=('verdana',15), width=15,bg='#EB2B81')
+        Delete_task_btn.pack(pady=(10,10))
+
+        Marktask_done_btn = Button(self.root, text='Marktask done', font=('verdana',15), width=15,bg='#EB2B81')
+        Marktask_done_btn.pack(pady=(10,10))
+        
 
 
 
