@@ -16,7 +16,6 @@ class ToDoApp:
         self.root.geometry('600x600')
 
         self.login_gui()
-
         self.root.mainloop()
 
 
@@ -104,7 +103,6 @@ class ToDoApp:
         else:
             messagebox.showerror('Error', 'Email already exists')
 
-        # Button(self.root, command=self.task_btn)
 
 
     def login_logic(self):
@@ -147,11 +145,8 @@ class ToDoApp:
         Logout_btn.pack(pady=(10,10))
 
     def create_task(self):
-
          
         self.clear()
-
-        is_vaild = False
 
         head = Label(self.root, text='ToDoAPP',bg='#92DCE5',fg="#E30D6D",font=("Arial", 24,'italic'))
         head.pack(pady=30)
@@ -174,44 +169,43 @@ class ToDoApp:
         self.description_input = Entry(self.root, width=50)
         self.description_input.pack(pady=(5, 10), ipady=10)
 
-        submit_btn = Button(self.root, text='SUBMIT', font=('verdana',15), width=15,bg='#EB2B81', command=self.view_task)
+        submit_btn = Button(self.root, text='SUBMIT', font=('verdana',15), width=15,bg='#EB2B81', command=self.submit_task)
         submit_btn.pack(pady=(10,10))
 
 
         back_btn = Button(self.root, text='Go Back', font=('verdana',15), width=15,bg='#EB2B81', command=self.task_btn)
         back_btn.pack(pady=(10,10))
 
+
+    def submit_task(self):
+        title = self.title_input.get()
+        priority = self.priority_input.get()
+        description = self.description_input.get()
+
+        if title and priority and description:
+            response = self.dbo.add_task(title,priority,description)
+            if response:
+                messagebox.showinfo('Success', 'Task Created Successfully!')
+                self.clear()
+                self.task_btn()
+            else:
+                messagebox.showerror('Error', 'Please Fill all fields.')
+            
+
     def view_task(self):
 
-        # self.clear()
+        self.clear()
 
         head = Label(self.root, text='ToDoAPP',bg='#92DCE5',fg="#E30D6D",font=("Arial", 24,'italic'))
         head.pack(pady=30)
 
-        title = self.title_input.get()
-        priority = self.priority_input.get()
-        description = self.description_input.get()
-        
-
-        response = self.dbo.task(title,priority,description)
-
-        if response:
-            messagebox.showinfo('Success', 'Login Successful.')
-        else:
-            messagebox.showerror('Error', 'Invaild Email/Password')
+        tasks = self.dbo.get_tasks()
+        for task in tasks:
+            task_label = Label(self.root, text=f"{task['title']}: {task['priority']} - {task['description']}", bg='#92DCE5',fg="#E30D6D",font=("Arial", 24,'italic'))
+            task_label.pack(pady=(10,10))
 
         back_btn = Button(self.root, text='Go Back', font=('verdana',15), width=15,bg='#EB2B81', command=self.task_btn)
         back_btn.pack(pady=(10,10))
-
-
-    def submit(self):
-        pass
-
-
-
-
-
-    
 
 
 
