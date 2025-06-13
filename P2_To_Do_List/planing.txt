@@ -1,0 +1,39 @@
+
+Step 1: Define the Goal
+    so my to-do-list should have:
+        1. to create a list
+        2. to edit the list
+        3. to view it
+        4. mark them as completed or incomplete
+        5. to delet task
+        6. to save task 
+
+Step 2: Choose the Data Structure:
+    dictionaries to store the data 
+
+Step 3: Design the Menu (Interface):
+    something
+
+Step 4: Break Into Functions:
+    something
+
+Step 5: Decide on Persistence:
+    something
+
+Step 6: Handle Edge Cases:
+    pass
+
+Step 7: Optional Features (Add Later):
+    pass
+
+If you want to enhance the functionality in the future, you might add:
+
+'6': Mark task as complete/incomplete (if not part of edit)
+
+'7': Save tasks to file
+
+'8': Load tasks from file
+
+'9': Exit program (if it's a persistent menu loop)
+
+Sort or filter tasks by due date, priority, etc. (future improvements)
