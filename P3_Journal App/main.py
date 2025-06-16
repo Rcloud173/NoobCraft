@@ -1,0 +1,2 @@
+class JournalApp:
+    pass
