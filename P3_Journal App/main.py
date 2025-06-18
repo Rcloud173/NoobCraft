@@ -42,7 +42,7 @@ class JournalApp:
         self.password_input = Entry(self.root, width=50,show='*')
         self.password_input.pack(pady=(5, 10), ipady=4)
 
-        login_btn = Button(self.root, text='Login', font=('verdana',15), width=10,bg='#EB2B81', command=self.main_page)
+        login_btn = Button(self.root, text='Login', font=('verdana',15), width=10,bg='#EB2B81', command=self.main_menu)
         login_btn.pack(pady=(10,10))
 
 
@@ -58,7 +58,7 @@ class JournalApp:
     def register_gui(self):
          self.clear()
 
-         head = Label(self.root, text='ToDoAPP',bg='#9DEA4A',fg="#E30D6D",font=("Arial", 24,'italic'))
+         head = Label(self.root, text='Simple Journal App',bg='#9DEA4A',fg="#E30D6D",font=("Arial", 24,'italic'))
          head.pack(pady=30)
 
 
@@ -93,9 +93,28 @@ class JournalApp:
     def register_logic(self):
         pass
 
-    def main_page(self):
+    def main_menu(self):
 
         self.clear()
+
+        head = Label(self.root, text='Simple Journal App - Menu',bg="#9DEA4A",fg="#E30D6D",font=("Arial", 24,'italic'))
+        head.pack(pady=30)
+
+        new_entery = Button( self.root, text="Create new entry",font=('verdana',15), width=15,bg='#EB2B81', command= self.new_entry)
+        new_entery.pack(pady=(10,10))
+
+        view_all_entries = Button( self.root, text="See all the entries",font=('verdana',15), width=15,bg='#EB2B81')
+        view_all_entries.pack(pady=(10,10))
+
+        logout = Button( self.root, text="Logout",font=('verdana',15), width=15,bg='#EB2B81', command=self.login_gui)
+        logout.pack(pady=(10,10))
+
+    def new_entry(self):
+
+        self.clear()
+
+        head = Label(self.root, text='Simple Journal App - New Entry',bg="#9DEA4A",fg="#E30D6D",font=("Arial", 24,'italic'))
+        head.pack(pady=30)
         
         self.label = tk.Label(root, text="Write your journal entry below:", bg="#9DEA4A", font=(15))
         self.label.pack(pady=10)
@@ -108,6 +127,9 @@ class JournalApp:
 
         self.clear_button = tk.Button(root, text="Clear", bg="#9DEA4A")
         self.clear_button.pack(pady=(10,10))
+
+        back = Button( self.root, text="Go back",font=('verdana',15), width=15,bg='#EB2B81', command=self.main_menu)
+        back.pack(pady=(10,10))    
 
         
 if __name__ == "__main__":
