@@ -5,6 +5,9 @@ from datetime import datetime
 
 class JournalApp:
     def __init__(self, root):
+
+        self.current_user = None
+
         self.root = root
         self.root.title("Simple Journal App")
 
@@ -15,17 +18,7 @@ class JournalApp:
 
 
         # Create UI components
-        # self.label = tk.Label(root, text="Write your journal entry below:")
-        # self.label.pack(pady=10)
-
-        # self.text_area = tk.Text(root, height=15, width=60)
-        # self.text_area.pack(padx=10, pady=10)
-
-        # self.save_button = tk.Button(root, text="Save Entry")
-        # self.save_button.pack(pady=5)
-
-        # self.clear_button = tk.Button(root, text="Clear")
-        # self.clear_button.pack(pady=5)
+        
 
     def clear(self):
         for i in self.root.pack_slaves():
@@ -49,7 +42,7 @@ class JournalApp:
         self.password_input = Entry(self.root, width=50,show='*')
         self.password_input.pack(pady=(5, 10), ipady=4)
 
-        login_btn = Button(self.root, text='Login', font=('verdana',15), width=10,bg='#EB2B81', command=self.login_logic)
+        login_btn = Button(self.root, text='Login', font=('verdana',15), width=10,bg='#EB2B81', command=self.main_page)
         login_btn.pack(pady=(10,10))
 
 
@@ -100,7 +93,21 @@ class JournalApp:
     def register_logic(self):
         pass
 
-    
+    def main_page(self):
+
+        self.clear()
+        
+        self.label = tk.Label(root, text="Write your journal entry below:", bg="#9DEA4A", font=(15))
+        self.label.pack(pady=10)
+
+        self.text_area = tk.Text(root, height=15, width=60)
+        self.text_area.pack(padx=10, pady=10)
+
+        self.save_button = tk.Button(root, text="Save Entry", bg="#9DEA4A")
+        self.save_button.pack(pady=(10,10))
+
+        self.clear_button = tk.Button(root, text="Clear", bg="#9DEA4A")
+        self.clear_button.pack(pady=(10,10))
 
         
 if __name__ == "__main__":
