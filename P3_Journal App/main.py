@@ -129,7 +129,16 @@ class JournalApp:
         self.clear_button.pack(pady=(10,10))
 
         back = Button( self.root, text="Go back",font=('verdana',15), width=15,bg='#EB2B81', command=self.main_menu)
-        back.pack(pady=(10,10))    
+        back.pack(pady=(10,10)) 
+
+    def save_entry_logic(self):
+        pass
+
+    def clear_logic(self):
+        pass 
+
+    def view_all_entries(self):
+        pass 
 
         
 if __name__ == "__main__":
