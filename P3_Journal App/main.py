@@ -103,7 +103,7 @@ class JournalApp:
         new_entery = Button( self.root, text="Create new entry",font=('verdana',15), width=15,bg='#EB2B81', command= self.new_entry)
         new_entery.pack(pady=(10,10))
 
-        view_all_entries = Button( self.root, text="See all the entries",font=('verdana',15), width=15,bg='#EB2B81')
+        view_all_entries = Button( self.root, text="See all the entries",font=('verdana',15), width=15,bg='#EB2B81', command=self.view_all_entries)
         view_all_entries.pack(pady=(10,10))
 
         logout = Button( self.root, text="Logout",font=('verdana',15), width=15,bg='#EB2B81', command=self.login_gui)
@@ -138,7 +138,25 @@ class JournalApp:
         pass 
 
     def view_all_entries(self):
-        pass 
+        self.clear()
+
+        head = Label(self.root, text='Simple Journal App - View All Entery',bg="#9DEA4A",fg="#E30D6D",font=("Arial", 24,'italic'))
+        head.pack(pady=30)
+        
+        self.label = tk.Label(root, text="Write your journal entry below:", bg="#9DEA4A", font=(15))
+        self.label.pack(pady=10)
+
+        # self.text_area = tk.Text(root, height=15, width=60)
+        # self.text_area.pack(padx=10, pady=10)
+
+        self.save_button = tk.Button(root, text="Edit", bg="#9DEA4A",font=('verdana',15))
+        self.save_button.pack(pady=(10,10))
+
+        self.clear_button = tk.Button(root, text="Delete", bg="#9DEA4A",font=('verdana',15))
+        self.clear_button.pack(pady=(10,10))
+
+        back = Button( self.root, text="Go back",font=('verdana',15), width=15,bg='#EB2B81', command=self.main_menu)
+        back.pack(pady=(10,10))  
 
         
 if __name__ == "__main__":
