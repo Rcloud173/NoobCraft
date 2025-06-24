@@ -146,9 +146,6 @@ class JournalApp:
         self.label = tk.Label(root, text="Write your journal entry below:", bg="#9DEA4A", font=(15))
         self.label.pack(pady=10)
 
-        # self.text_area = tk.Text(root, height=15, width=60)
-        # self.text_area.pack(padx=10, pady=10)
-
         self.save_button = tk.Button(root, text="Edit", bg="#9DEA4A",font=('verdana',15))
         self.save_button.pack(pady=(10,10))
 
