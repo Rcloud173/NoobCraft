@@ -9,5 +9,7 @@ class Database:
     def add_user(self):
         pass
 
+    # gdfghgs
+
     def add_journal(self):
         pass
