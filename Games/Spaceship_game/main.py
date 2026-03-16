@@ -15,23 +15,23 @@ surf.fill("green")
 x = 100 
 
 # importing an image
-player_surf = pygame.image.load('Spaceship_game/images/player.png').convert_alpha()
+player_surf = pygame.image.load('Games/Spaceship_game/images/player.png').convert_alpha()
 player_rect = player_surf.get_frect(center = (WINDOW_WIDTH/2, WINDOW_HEIGHT/2))
-player_direction = pygame.math.Vector2(2,-1)
-player_speed = 10
+player_direction = pygame.math.Vector2(1,0)
+player_speed = 100
 
-star_surf = pygame.image.load('Spaceship_game/images/star.png').convert_alpha()
+star_surf = pygame.image.load('Games/Spaceship_game/images/star.png').convert_alpha()
 star_positions = [((randint(0,WINDOW_WIDTH),randint(0,WINDOW_HEIGHT))) for i in range(20)]
 
-meteor_surf = pygame.image.load('Spaceship_game/images/meteor.png').convert_alpha()
+meteor_surf = pygame.image.load('Games/Spaceship_game/images/meteor.png').convert_alpha()
 meteor_rect = meteor_surf.get_frect(center = (WINDOW_WIDTH/2, WINDOW_HEIGHT/2))
 
-laser_surf = pygame.image.load('Spaceship_game/images/laser.png').convert_alpha()
+laser_surf = pygame.image.load('Games/Spaceship_game/images/laser.png').convert_alpha()
 laser_rect = laser_surf.get_frect(bottomleft =(20,WINDOW_HEIGHT -20))
 
 
 while running:
-    clock.tick(10)
+    dt = clock.tick(10)/1000
     # event loop
     for event in pygame.event.get():
          if event.type == pygame.QUIT:
@@ -48,9 +48,7 @@ while running:
 
 
     # player movement 
-    player_rect.center += player_direction * player_speed
-    # if player_rect.right > WINDOW_WIDTH or player_rect.left < 0:
-    #     player_direction *= -1
+    player_rect.center += player_direction * player_speed * dt
     display_surface.blit(player_surf, player_rect)
 
 
@@ -58,3 +56,6 @@ while running:
 
 pygame.quit()
   
+
+    # if player_rect.right > WINDOW_WIDTH or player_rect.left < 0:
+    #     player_direction *= -1
